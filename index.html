@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AR Aquarium</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AR Aquarium</title>
 </head>
 <body>
-    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
-    <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script>
-    <a-scene embedded arjs="debugUIEnabled:false;">
-			<a-assets>
-				<a-asset-item id="rocket-obj" src="./src/rocket.obj"></a-asset-item>
-				<a-asset-item id="rocket-mtl" src="./src/rocket.mtl"></a-asset-item>
-			</a-assets>
-    	<!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
-    	<a-marker preset="hiro">
-      	<!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
-      	<a-box position="0 0.5 0" wireframe="true"></a-box>
-			</a-marker>
-			<a-marker presets="kanji">
-				<a-obj-model
+  <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+  <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script>
+  <a-scene embedded arjs="debugUIEnabled:false;">
+		<a-assets>
+			<a-asset-item id="rocket-obj" src="./src/rocket.obj"></a-asset-item>
+			<a-asset-item id="rocket-mtl" src="./src/rocket.mtl"></a-asset-item>
+		</a-assets>
+    <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
+  	<a-marker preset="hiro">
+    <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
+    	<a-box position="0 0.5 0" color="tomato" depth="2" height="4" width="0.5" wireframe="true"></a-box>
+		</a-marker>
+		<a-marker presets="kanji">
+			<a-obj-model
 				src="#rocket-obj"
 				mtl="#rocket-mtl"
-				scale="0.005 0.005 0.005"
-				position="0 0.5 0">
-				</a-obj-model
-				>
-			</a-marker>
-      	<!-- AR用のカメラを置く -->
-			<a-entity camera></a-entity>
-		</a-scene>
+				scale="1 1 1"
+				position="0 5 0">
+			</a-obj-model>
+		</a-marker>
+    <!-- AR用のカメラを置く -->
+		<a-entity camera></a-entity>
+	</a-scene>
 </body>
 </html>
